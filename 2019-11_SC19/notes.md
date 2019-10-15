@@ -1,5 +1,6 @@
 # Overview
 
+- Start from the top down (ECP example working in a browser)
 - Slide 2: include script to install viewer after exporting a database from PV
 
 # TODO
@@ -11,6 +12,9 @@
 - Test Cinema:Scope
 
 ## Ethan
+- create a state file for cinema export
+	- images
+	- images and geometry
 - update dss website with projects
 - manage issues to be moved from 5.7.0 to 5.7.1 
 
