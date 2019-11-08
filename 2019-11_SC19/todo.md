@@ -1,7 +1,7 @@
 ## General
 - Friday 8th (8am)
-    - David: intro slides
-ok  - Terry: PV state slides
+    - **[X]** David: intro slides
+    - **[X]** Terry: PV state slides
 
 - Tuesday 12th, COB:
     - Update cinema module to cinema_lib dev branch or merge dev branch into master
