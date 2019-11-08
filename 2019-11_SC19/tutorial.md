@@ -8,39 +8,38 @@
 <!-- *page_number: -->
 <link rel="stylesheet" type="text/css" href="css/ecp.css"></link>
 
-![bg](img/title.png)
+![bg](img/background_sc19.png)
 # Cinema Tutorial November 2019 
 ## Supercomputing Tutorial, Denver, CO
 
-David Rogers, James Ahrens, Terry Turton, Soumya Dutta, Divya Banesh, Roxana Bujack, Ethan Stam
+David Rogers, James Ahrens, Terry Turton, Soumya Dutta, 
+Divya Banesh, Roxana Bujack, Ethan Stam
 
 <small>LA-UR-19-20187</small>
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 
 # Tutorial Goals
 
 <!-- TODO update image to montage -->
 <img src="img/montage.png" width="35%" align="right" valign="top">
 
-- **Cinema Databases**
-	- Create cinema database by hand
-- **Cinema Writers**
-    - Review some options for creating databases 
-- **Cinema Viewers**
-    - Examples of libraries and viewers
-	- Understand how to use the browser-based viewers
+- **Introduce Cinema**
+	- Inspect a simple Cinema database
 - **Cinema Algorithms**
-    - Examples of libraries and tools
-	- Example of a post-processing workflow
+    - Run command line algorithms on a Cinema database
+- **Create a Cinema Database with ParaView**
+	- Load data and export with ParaView
+- **Further Information**
+	- Pointers to more tutorials and instructions
 
 ---
-# Where Does Cinema Fit in ECP Analysis
+# Where Does Cinema Fit into in-situ Analysis
 <img src="img/ECP_DAV_diagram.png" width="90%" align="center">
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # ECP Calls for the use of in-situ workflows
 <img src="img/ECP_DAV_diagram.png" width="20%" valign="bottom" align="right">
 
@@ -52,15 +51,15 @@ David Rogers, James Ahrens, Terry Turton, Soumya Dutta, Divya Banesh, Roxana Buj
 - Cinema is a project dedicated to these requirements
 
 <br></br>
-## Today we wil work with basic examples
+## Today we will work with basic examples
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Algorithm-based data extraction is a change ...
 <img src="img/extracts.png" width="100%" align="right">
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # What is Cinema?
 <img src="img/ecosystem.png" width="50%" align="right">
 
@@ -74,12 +73,12 @@ Cinema is and ecosystem consisting of:
 designed to help explore extreme scale data.
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # The Cinema Ecosystem?
 <img src="img/ecosystem.png" width="100%">
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Important Terms
 
 - **Cinema database:** a set of data in permanent storage, as described by the Cinema Specification, consisting of **artifacts** and parameters.
@@ -90,22 +89,22 @@ designed to help explore extreme scale data.
     - example: a simulation grid
     - example: `.vti` file
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Online Resources
 
 - This Tutorial
-    - https://github.com/cinemascience/cinema_tutorial
-- Cinema website
-    - http://www.cinemascience.org
+    - https://github.com/cinemascience/cinema_tutorial_2019-11_SC
 - Cinema github
     - https://github.com/cinemascience
-- Cinema viewer examples
+- Cinema websites
+    - http://www.cinemascience.org
     - http://www.cinemaviewer.org
-- Cinema Examples for ECP 2018 Review
+- Cinema Examples
+    - http://cinemascience.org/tutorials/2019-11_SC.html
     - http://portal.nersc.gov/project/alpine/2018_ECPReview_Cinema/review.new.html
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Website
 
 <img src="img/cinemawebsite.png" width="50%" align="right">
@@ -115,7 +114,7 @@ designed to help explore extreme scale data.
 - Links to expanded documentation
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Website Documentation
 
 <img src="img/cinemawebsite_docs.png" width="50%" align="right">
@@ -127,7 +126,7 @@ designed to help explore extreme scale data.
 - Example datasets
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Github Repositories
 
 <img src="img/cinemascience.png" width="50%" align="right">
@@ -137,8 +136,8 @@ designed to help explore extreme scale data.
 	- See individual projects for status
 
 ---
-![bg](img/background.png)
-# Cinema Examples for ECP 2018 Review
+![bg](img/background_sc19.png)
+# Cinema Examples
 
 <img src="img/ecp2018examples.png" width="50%" align="right">
 
@@ -146,15 +145,13 @@ designed to help explore extreme scale data.
 - View of ongoing workflow development for ECP app analysis and tasks
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # How to follow along ...
 
-- `git clone git@github.com:cinemascience/cinema_tutorial.git`
-- `cd cinema_tutorial`
-- open `tutorial.html` in the browser of your choice
-- open a terminal in the `cinema_tutorial` directory
+- In your virtual machine, `cd cinema_tutorial`
+- In a browser, `http://cinemascience.org/tutorials/2019-11_SC.html`
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # A note about Cinema Viewers and browser permissions 
 
 - Safari
@@ -169,7 +166,7 @@ designed to help explore extreme scale data.
 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Coder Information: Digging into Cinema Databases
 <img src="img/coder.png" width="40%" align="right">
 
@@ -181,7 +178,7 @@ A Cinema database is a set of artifacts, parameters and semantics.
     - Note that location of artifacts is not restricted by specification (can be local or remote), but for simplicity, this tutorial covers local examples.
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # A hand-editable example of a Cinema Database
 
 No matter how complex, all Cinema databases have the same elements.
@@ -201,7 +198,7 @@ example_02.cdb/
 Other data can reside in the `<>.cdb` directory, and is not controlled by the spec.
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # How would you create one from scratch? 
 
 - Use Case: you have a set of images defined by some parameters (say, time ...)
@@ -218,7 +215,7 @@ data/
 ```
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Database
 
 Create a `data.csv` file, according to the specification:
@@ -240,7 +237,7 @@ time,FILE
 ...
 ```
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # That's it ... 
 
 ```
@@ -256,7 +253,7 @@ data/
 ```
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Now you can explore this in a viewer 
 
 <img src="img/halo.png" width="600" align="right">
@@ -268,7 +265,7 @@ Explore this with a Cinema viewer, and scroll through the images using the param
 - Works for any number of artifacts
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # A sample database with a few more parameters
 
 <img src="img/volume.png" width="600" align="right">
@@ -276,7 +273,7 @@ Explore this with a Cinema viewer, and scroll through the images using the param
 - `Volume Dataset` entry in **tutorial home page** 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # But ... Data Is 'Messy' 
 
 - Smoothly varying databases are nice, and typically come from simulations
@@ -294,7 +291,7 @@ temp,pressure,vel,time,FILE
 ...
 ```
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # A multi-artifact Cinema database
 
 - A database can have multiple artifacts
@@ -312,7 +309,7 @@ theta,phi,vti x-radius,pdb,FILE,FILE_VTI,FILE_PDB
 ``` 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Explorer viewer supports multiple data types 
 
 <img src="img/explorer_multiple.png" width="50%" align="right">
@@ -321,7 +318,7 @@ theta,phi,vti x-radius,pdb,FILE,FILE_VTI,FILE_PDB
 - select "Multiple Artifacts" from the database list at the top, press `load` button
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Explorer viewer supports multiple data types 
 <img src="img/explorer_multiple.png" width="50%" align="right">
 
@@ -331,20 +328,20 @@ When viewing this data, `Cinema:Explorer` shows thumbnails for each type of data
 - **NOTE:** `Cinema:Explorer` indicates which types of files it doesn't have viewers for.
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Explorer viewer supports multiple data types 
 <img src="img/explorer_multiple_volume.png" width="50%" align="right">
 
 ParaView/VTK `.vti` files can be interactively viewed ...
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Explorer viewer supports multiple data types 
 <img src="img/explorer_multiple_molecule.png" width="50%" align="right">
 ParaView/VTK `.pdb` files can be interactively viewed ...
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # How else can we create a Cinema database?
 <img src="img/ascent.png" width="50%" align="right">
 
@@ -361,11 +358,11 @@ ParaView/VTK `.pdb` files can be interactively viewed ...
 <!-- TODO add montage diagram, including ASCENT example (get from Matt)-->
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Application export example
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # ParaView v5.5
 
 <img src="img/pv/pv_sphere.png" width="60%" align="right">
@@ -373,7 +370,7 @@ ParaView/VTK `.pdb` files can be interactively viewed ...
 - We've created a sphere source
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # ParaView v5.5
 
 <img src="img/pv/pv_sphere_export.png" width="60%" align="right">
@@ -383,7 +380,7 @@ ParaView/VTK `.pdb` files can be interactively viewed ...
 	-`Cinema Database (*.cdb)`
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # ParaView v5.5
 
 <img src="img/pv/pv_sphere_cinema.png" width="60%" align="right">
@@ -396,7 +393,7 @@ ParaView/VTK `.pdb` files can be interactively viewed ...
 - **Note:** there is a bug in single-timestep exports in PV 5.6
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # View Resulting Database in `cinema:compare`
 
 <img src="img/compare.png" width="50%" align="right">
@@ -410,7 +407,7 @@ ParaView/VTK `.pdb` files can be interactively viewed ...
 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Viewers
 <img src="img/coder.png" width="30%" align="right">
 
@@ -423,7 +420,7 @@ ParaView/VTK `.pdb` files can be interactively viewed ...
 - **Cinema:Scope**, a cross-platform viewer application under development.
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Viewers
 <img src="img/coder.png" width="30%" align="right">
 
@@ -439,7 +436,7 @@ Viewers and components can be used in a variety of ways:
     - Cinema will be supported natively on ECP Concur
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Coder Information: Cinema Components 
 <img src="img/components.png" width="35%" align="right">
 
@@ -452,7 +449,7 @@ Viewers and components can be used in a variety of ways:
 - github repository includes detailed examples and docs
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Components
 - Repository and examples: `https://github.com/cinemascience/cinema_components`
     - distributed online, so include these in your own viewers with:
@@ -465,7 +462,7 @@ src='https://cinemascience.github.io/release/CinemaComponents.v2.6.2.min.js'>
 ```
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Viewer `Cinema:Compare`
 <img src="img/compare.png" width="60%" align="right">
 Browser-based basic viewer for image-based output
@@ -475,7 +472,7 @@ Browser-based basic viewer for image-based output
 - `Cinema:Compare` will do its best to show images as the parameters are manipulated (missing images will not cause problems).
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Viewer `Cinema:Compare`
 To modify this application, edit the `index.html` file to point to a list of databases you'd like to view:
 
@@ -499,13 +496,13 @@ To modify this application, edit the `index.html` file to point to a list of dat
 ```
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Viewer `Cinema:Explorer`
 <img src="img/explorer.png" width="800" align="right">
 Browser-based Explorer for general databases
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema:Explorer
 To use this application, edit the `databases.json` file referenced in the html:
 
@@ -528,7 +525,7 @@ To use this application, edit the `databases.json` file referenced in the html:
 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema:Scope
 <img src="img/scope.png" width="50%" align="right">
 
@@ -543,7 +540,7 @@ To use this application, edit the `databases.json` file referenced in the html:
 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Coder Information: Cinema Algorithms
 <img src="img/coder.png" width="30%" align="right">
 
@@ -554,7 +551,7 @@ A command line tool with set of algorithms that operate on Cinema databases.
 `git@github.com:cinemascience/cinema_lib.git`
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Coder Information: Cinema Algorithms
 <img src="img/coder.png" width="30%" align="right">
 
@@ -568,7 +565,7 @@ Cinema command line tool support the following general operations:
     - create new data artifacts, and add them to the database
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command line tool
 <img src="img/command.png" width="40%" align="right">
 
@@ -584,7 +581,7 @@ Cinema command line tool support the following general operations:
 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command Line Algorithm Example
 
 - General form of a command:
@@ -597,13 +594,11 @@ Cinema command line tool support the following general operations:
 	- parameter algorithms are domain independent
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command Line Algorithm Example
 
-<img src="img/ocean.png" width="70%">
-
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command Line Algorithm Example
 
 **Data:** rendered images and timestep parameters.
@@ -622,7 +617,7 @@ Cinema command line tool support the following general operations:
 </table>
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command Line Algorithm Example
 
 Generate greyscale images and add them to the database:
@@ -640,7 +635,7 @@ Generate greyscale images and add them to the database:
 </table>
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command Line Algorithm Example
 
 Extract number of edge pixels in each greyscale image
@@ -659,7 +654,7 @@ Extract number of edge pixels in each greyscale image
 
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command Line Algorithm Example
 
 Generate canny edge images of the grayscale images in the database:
@@ -677,7 +672,7 @@ Generate canny edge images of the grayscale images in the database:
 </table>
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Cinema Command Line Algorithm Example
 <img src="img/algorithm/edge_viewer.png" width="700" align="right">
 
@@ -686,14 +681,14 @@ Generate canny edge images of the grayscale images in the database:
 - Load 'Ocean Algorithm Example`
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Algorithm Example, Visualization
 <img src="img/algorithm/edge_viewer_search_selected.png" width="700" align="right">
 
 - Using `Cinema:Explorer`, we can select the images that have the highest edge count.
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Algorithm Example, Visualization
 <img src="img/algorithm/edge_viewer_search_zoom.png" width="700" align="right">
 
@@ -702,16 +697,16 @@ Generate canny edge images of the grayscale images in the database:
 - You can continue to cycle through applying algorithms and viewing results.
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Additional Algorithm Examples
 <img src="img/algorithm/track.png" width="100%" align="right">
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Questions?
 
 ---
-![bg](img/background.png)
+![bg](img/background_sc19.png)
 # Acknowledgements
 
 - Slides created with [`Marp`](https://yhatt.github.io/marp)
