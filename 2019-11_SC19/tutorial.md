@@ -1,4 +1,4 @@
-<!-- 
+<!--
     $size: 16:9
     $theme: default
     page_number: true
@@ -9,10 +9,10 @@
 <link rel="stylesheet" type="text/css" href="css/ecp.css"></link>
 
 ![bg](img/background_sc19.png)
-# Cinema Tutorial November 2019 
+# Cinema Tutorial November 2019
 ## Supercomputing Tutorial, Denver, CO
 
-David Rogers, James Ahrens, Terry Turton, Soumya Dutta, 
+David Rogers, James Ahrens, Terry Turton, Soumya Dutta,
 Divya Banesh, Roxana Bujack, Ethan Stam
 
 
@@ -45,7 +45,7 @@ Divya Banesh, Roxana Bujack, Ethan Stam
 - Algorithms produce artifacts in permanent storage
 - Those artifacts:
     - Will be very different from our current artifacts in permanent storage
-    - Will need different application support to explore them 
+    - Will need different application support to explore them
     - Will themselves be inputs to analysis workflows
 - Cinema is a project dedicated to these requirements
 
@@ -69,7 +69,7 @@ Cinema is and ecosystem consisting of:
 - database viewers
 - algorithms
 
-designed to help explore extreme scale data.
+Designed to help explore extreme scale data.
 
 ---
 ![bg](img/background_sc19.png)
@@ -148,17 +148,21 @@ designed to help explore extreme scale data.
 # How to follow along ...
 
 - In your virtual machine, `cd cinema_tutorial`
-- In a browser, `http://cinemascience.org/tutorials/2019-11_SC.html`
+- git clone https://github.com/cinemascience/cinema_tutorial_2019-11_SC.git
+and follow along in the browser, `https://github.com/cinemascience/cinema_tutorial_2019-11_SC/tutorial.html`
+
+
 ---
 ![bg](img/background_sc19.png)
-# A note about Cinema Viewers and browser permissions 
+# A note about Cinema Viewers and browser permissions
 
 - Safari
     - Safari->Preferences->Advanced->Show Develop menu in menu bar
     - Safari->Develop->Disable Local File Restrictions (on)
     - **NOTE:** Reset file restrictions when you are done
 - Firefox
-    - No setting changes needed
+    - In address bar, input **about:config:**
+		- Change **privacy.file_unique_origin** to **false**
 - Chrome (exit Chrome)
     - use --disable-web-security command line option for this session
     - `open_tutorial` file has an example for Mac
@@ -198,7 +202,7 @@ Other data can reside in the `<>.cdb` directory, and is not controlled by the sp
 
 ---
 ![bg](img/background_sc19.png)
-# How would you create one from scratch? 
+# How would you create one from scratch?
 
 - Use Case: you have a set of images defined by some parameters (say, time ...)
 
@@ -237,7 +241,7 @@ time,FILE
 ```
 ---
 ![bg](img/background_sc19.png)
-# That's it ... 
+# That's it ...
 
 ```
 data/
@@ -253,13 +257,13 @@ data/
 
 ---
 ![bg](img/background_sc19.png)
-# Now you can explore this in a viewer 
+# Now you can explore this in a viewer
 
 <img src="img/halo.png" width="600" align="right">
 
 Explore this with a Cinema viewer, and scroll through the images using the parameter sliders.
 
-- `Halo Dataset` link in **tutorial home page** 
+- `Halo Dataset` link in **tutorial home page**
 - Works for any number of parameters
 - Works for any number of artifacts
 
@@ -269,17 +273,17 @@ Explore this with a Cinema viewer, and scroll through the images using the param
 
 <img src="img/volume.png" width="600" align="right">
 
-- `Volume Dataset` entry in **tutorial home page** 
+- `Volume Dataset` entry in **tutorial home page**
 
 ---
 ![bg](img/background_sc19.png)
-# But ... Data Is 'Messy' 
+# But ... Data Is 'Messy'
 
 - Smoothly varying databases are nice, and typically come from simulations
 	- Typically have all values expected - entire `data.csv` is populated
 - But real world data can be messy, and this is valid per the spec
     - `NaN`, empty values are fine
-    - viewers, algs are expected to properly deal with this 
+    - viewers, algs are expected to properly deal with this
 
 ```
 temp,pressure,vel,time,FILE
@@ -305,20 +309,20 @@ theta,phi,vti x-radius,pdb,FILE,FILE_VTI,FILE_PDB
 0,-144,30,N/A,image/-144/0.png,wavelet/30.vti,
 0,-126,40,N/A,image/-126/0.png,,
 ...
-``` 
+```
 
 ---
 ![bg](img/background_sc19.png)
-# Cinema Explorer viewer supports multiple data types 
+# Cinema Explorer viewer supports multiple data types
 
 <img src="img/explorer_multiple.png" width="50%" align="right">
 
-- `Cinema Explorer` link in **tutorial home page** 
+- `Cinema Explorer` link in **tutorial home page**
 - select "Multiple Artifacts" from the database list at the top, press `load` button
 
 ---
 ![bg](img/background_sc19.png)
-# Cinema Explorer viewer supports multiple data types 
+# Cinema Explorer viewer supports multiple data types
 <img src="img/explorer_multiple.png" width="50%" align="right">
 
 When viewing this data, `Cinema:Explorer` shows thumbnails for each type of data that it can view.
@@ -328,14 +332,14 @@ When viewing this data, `Cinema:Explorer` shows thumbnails for each type of data
 
 ---
 ![bg](img/background_sc19.png)
-# Cinema Explorer viewer supports multiple data types 
+# Cinema Explorer viewer supports multiple data types
 <img src="img/explorer_multiple_volume.png" width="50%" align="right">
 
 ParaView/VTK `.vti` files can be interactively viewed ...
 
 ---
 ![bg](img/background_sc19.png)
-# Cinema Explorer viewer supports multiple data types 
+# Cinema Explorer viewer supports multiple data types
 <img src="img/explorer_multiple_molecule.png" width="50%" align="right">
 ParaView/VTK `.pdb` files can be interactively viewed ...
 
@@ -347,11 +351,11 @@ ParaView/VTK `.pdb` files can be interactively viewed ...
 - Directly output Cinema from your code
     - Refer to the specification
 - ASCENT
-    - **in-situ** output 
+    - **in-situ** output
 - ParaView
     - application
     - **in-situ:** ParaView catalyst (instructions on cinema website)
-- VisIt 
+- VisIt
     - application (instructions on cinema website)
 
 <!-- TODO add montage diagram, including ASCENT example (get from Matt)-->
@@ -400,13 +404,13 @@ Viewers and components can be used in a variety of ways:
     - Requires no infrastructure support
         - Ease of support
         - Long shelf life
-- Online, through web server 
+- Online, through web server
 	- Common use case
     - Cinema will be supported natively on ECP Concur
 
 ---
 ![bg](img/background_sc19.png)
-# Coder Information: Cinema Components 
+# Coder Information: Cinema Components
 <img src="img/components.png" width="35%" align="right">
 
 
@@ -424,7 +428,7 @@ Viewers and components can be used in a variety of ways:
     - distributed online, so include these in your own viewers with:
 ```
 <head>
-<script 
+<script
 src='https://cinemascience.github.io/release/CinemaComponents.v2.6.2.min.js'>
 </script>`
 </head>
@@ -513,7 +517,7 @@ To use this application, edit the `databases.json` file referenced in the html:
 # Coder Information: Cinema Algorithms
 <img src="img/coder.png" width="30%" align="right">
 
-A command line tool with set of algorithms that operate on Cinema databases. 
+A command line tool with set of algorithms that operate on Cinema databases.
 
 - algorithms can generate new **artifacts**, as well as new **parameters** about the artifacts.
 
@@ -526,7 +530,7 @@ A command line tool with set of algorithms that operate on Cinema databases.
 
 Cinema command line tool support the following general operations:
 
-- Verification of databases 
+- Verification of databases
 - Conversion/Upgrade of database formats
 - Meta data operations
     - create new parameters, such as change detection, edge detection, etc.
@@ -576,3 +580,5 @@ Cinema command line tool support the following general operations:
 
 - Slides created with [`Marp`](https://yhatt.github.io/marp)
 
+- Nyx cosmology simulation code:
+ A. S. Almgren, J. B. Bell, M.J. Lijewski, Z. Lukic, E. Van Andel, "Nyx: A Massively Parallel AMR Code for Computational Cosmology" Astrophysical Journal, 765, 39, 2013.  https://amrex-astro.github.io/Nyx/ 
