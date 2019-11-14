@@ -101,7 +101,7 @@ Designed to help explore extreme scale data.
     - http://www.cinemascience.org
     - http://www.cinemaviewer.org
 - Cinema Examples
-    - http://cinemascience.org/tutorials/2019-11_SC.html
+    - https://cinemascience.github.io/tutorials.html
     - http://portal.nersc.gov/project/alpine/2018_ECPReview_Cinema/review.new.html
 
 ---
@@ -151,7 +151,7 @@ Designed to help explore extreme scale data.
 
 - In your virtual machine, `cd cinema_tutorial`
 - git clone https://github.com/cinemascience/cinema_tutorial_2019-11_SC.git
-and follow along in the browser, `https://github.com/cinemascience/cinema_tutorial_2019-11_SC/tutorial.html`
+and open `https://github.com/cinemascience/cinema_tutorial_2019-11_SC/tutorial.html` to follow along in the browser.
 
 
 ---
@@ -583,4 +583,4 @@ Cinema command line tool support the following general operations:
 - Slides created with [`Marp`](https://yhatt.github.io/marp)
 
 - Nyx cosmology simulation code:
- A. S. Almgren, J. B. Bell, M.J. Lijewski, Z. Lukic, E. Van Andel, "Nyx: A Massively Parallel AMR Code for Computational Cosmology" Astrophysical Journal, 765, 39, 2013.  https://amrex-astro.github.io/Nyx/ 
+ A. S. Almgren, J. B. Bell, M.J. Lijewski, Z. Lukic, E. Van Andel, "Nyx: A Massively Parallel AMR Code for Computational Cosmology" Astrophysical Journal, 765, 39, 2013.  https://amrex-astro.github.io/Nyx/
